@@ -1,0 +1,24 @@
+# config.yaml
+dataset:
+    root_dir: data
+    source_test: with-token\test.csv
+    source_train: with-token\train.csv
+    source_no_test: no-token\test.csv
+    source_no_train: no-token\train.csv
+    input_path: test.jsonl
+    prompt_configuration: simple
+    use_cache: false
+generation:
+    max_tokens: 50
+    temperature: 2.0
+    top_p: 0.95
+    n: 1
+    presence_penalty: 0.0
+    frequency_penalty: 0.0
+limit_test: 4382 # sample size for testing,max:4382
+device: 3 # GPU device
+model_id: llama3-8b # The type of LLM: blue, llama3-8b, codellama-7b, deepseeker-6.7b,deepseekerv2
+matching: BM25 # The type of matching: TF-idf, BM25,
+shot: 5 # the number of matching examples:1, 2, 3, 4, 5, 6
+
+

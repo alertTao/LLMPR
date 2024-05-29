@@ -1,0 +1,1 @@
+{"precision": {"rouge1": 30.02, "rouge2": 12.63, "rougeL": 26.26, "rougeLsum": 26.29}, "recall": {"rouge1": 40.29, "rouge2": 17.14, "rougeL": 35.32, "rougeLsum": 35.34}, "f1": {"rouge1": 33.35, "rouge2": 14.04, "rougeL": 29.2, "rougeLsum": 29.21}, "avg_length": 11.252852578731172}
