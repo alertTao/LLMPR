@@ -7,7 +7,7 @@ import logging
 from omegaconf import DictConfig, OmegaConf
 from source.process import DataPreprocessor, StringPreprocessor, Metric, DataPreprocessorMatching, \
     DataPreprocessorMatchingShot
-from source.llm import BlueLLM, HuggingFaceLLM, DeepSeekerV2Utils
+from source.llm import HuggingFaceLLM, DeepSeekerV2Utils
 from source.utils import timer
 import sys
 import wandb
@@ -86,9 +86,7 @@ def main(cfg: DictConfig) -> None:
         )
 
     # 2. load LLM model
-    if cfg.model_id == 'blue':
-        llm_model = BlueLLM(cfg.model_id, cfg.generation)
-    elif cfg.model_id == 'deepseekerv2':
+    if cfg.model_id == 'deepseekerv2':
         llm_model = DeepSeekerV2Utils(cfg.model_id, cfg.generation)
     else:
         llm_model = HuggingFaceLLM(cfg.model_id, cfg.device, cfg.generation)

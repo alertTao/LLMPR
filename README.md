@@ -38,10 +38,9 @@ The top 6 most similar PRs from each algorithm on the test dataset of 4382 recor
 python prompt.py
 ```
 
-### BlueLM
-Due to the model being closed-source, the source code is not provided.
 
-### Llama3
+
+### BlueLM/Llama3
 You need to configure your GPU device and add your cache_home in[`./prompt.py`](./prompt.py).
 
 ### DeepSeek-V2

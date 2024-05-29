@@ -1,13 +1,8 @@
 import logging
-import time
-from typing import Dict, List
 import backoff
 import jsonlines
 from openai import OpenAI
-import json
 from tqdm import tqdm
-import os
-# from .blue import sync_vivogpt
 import transformers
 import torch
 
@@ -39,13 +34,6 @@ class BaseLLM:
                 if limit_test > 0 and i > limit_test:
                     break
 
-class BlueLLM(BaseLLM):
-
-    @backoff.on_exception(backoff.constant, Exception, interval=10)
-    def get_chat_completion(self, prompt: str) -> str:
-        #Due to the model not being open-source, the code is not displayed
-        # result = sync_vivogpt(prompt=prompt, temperature=self._generation_kwargs['temperature'], max_new_tokens=self._generation_kwargs['max_tokens'])
-        return None
 
 
 class DeepSeekerV2Utils(BaseLLM):
@@ -71,8 +59,6 @@ class DeepSeekerV2Utils(BaseLLM):
 
 
 
-
-
 class HuggingFaceLLM(BaseLLM):
 
     def __init__(self, model_id: str, device: int, generation_kwargs):
@@ -81,10 +67,10 @@ class HuggingFaceLLM(BaseLLM):
         model_path = {
                         "llama3-8b" : "meta-llama/Meta-Llama-3-8B-Instruct",
                         "codellama-7b" : "codellama/CodeLlama-7b-Instruct-hf",
-                        "deepseeker-6.7b" : "deepseek-ai/deepseek-coder-6.7b-instruct"
+                        "deepseeker-6.7b" : "deepseek-ai/deepseek-coder-6.7b-instruct",
+                        "blue" : "vivo-ai/BlueLM-7B-Base-32K"
                      }
         assert model_path[model_id] != None, "Model is not supported"
-        # os.environ["XDG_CACHE_HOME"] = "/mnt/ssd2/rambo/.cache"
         self._pipeline = transformers.pipeline(
             "text-generation",
             model=model_path[model_id],

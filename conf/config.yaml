@@ -19,6 +19,6 @@ limit_test: 4382 # sample size for testing,max:4382
 device: 3 # GPU device
 model_id: llama3-8b # The type of LLM: blue, llama3-8b, codellama-7b, deepseeker-6.7b,deepseekerv2
 matching: BM25 # The type of matching: TF-idf, BM25,
-shot: 5 # the number of matching examples:1, 2, 3, 4, 5, 6
+shot: 5 # the number of matching examples:1, 2, 3, 4, 5
 
 

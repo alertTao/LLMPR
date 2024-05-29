@@ -25,7 +25,7 @@ def main(cfg: DictConfig) -> None:
     match = MatchingCaculator(
         prompt_configuration=cfg.dataset.prompt_configuration,
     )
-    #开始匹配最相似的text，通过no-token匹配,写入的是带有token的，到jsonl文件
+
     match.match_data(source_no_test, source_no_train, source_train, cfg.matching, output_path, cfg.dataset.use_cache)
 
 
