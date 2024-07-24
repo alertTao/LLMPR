@@ -4,6 +4,7 @@
 - Configuration File
 - Matching Methods
 - Generation Methods
+- Results
 
 
 ## Data
