@@ -46,6 +46,14 @@ You need to configure your GPU device and add your cache_home in[`./prompt.py`](
 ### DeepSeek-V2
 You need to add your api_key in[`./source/llm/model.py`](./source/llm/model.py).
 
+### Llama3-70B
+You need to add your client_id&client_secret in[`./source/llm/model.py`](./source/llm/model.py).
+
+### gpt-3.5-turbo
+You need to add your api_key in[`./source/llm/model.py`](./source/llm/model.py).
+
+
+
 ## Results
 Our execution results are stored in the[`./result`](./result)directory, including results for BlueLM, DeepSeek-v2, and Llama3 LLMs under various conditions of shot (0, 1, 3, 5) and temperature (0, 0.5, 1.0, 1.5, 2.0).
 
